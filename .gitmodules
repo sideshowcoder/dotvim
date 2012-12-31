@@ -1,3 +1,36 @@
 [submodule "home/.vim/bundle/zenburn"]
 	path = home/.vim/bundle/zenburn
 	url = git://github.com/jnurmine/Zenburn.git
+[submodule "home/.vim/bundle/todotxt"]
+	path = home/.vim/bundle/todotxt
+	url = git@github.com:sideshowcoder/vimtodotxt.git
+[submodule "home/.vim/bundle/ack"]
+	path = home/.vim/bundle/ack
+	url = git://github.com/mileszs/ack.vim.git
+[submodule "home/.vim/bundle/ctrlp"]
+	path = home/.vim/bundle/ctrlp
+	url = git://github.com/kien/ctrlp.vim.git
+[submodule "home/.vim/bundle/nerdcommenter"]
+	path = home/.vim/bundle/nerdcommenter
+	url = https://github.com/scrooloose/nerdcommenter.git
+[submodule "home/.vim/bundle/nerdtree"]
+	path = home/.vim/bundle/nerdtree
+	url = git://github.com/scrooloose/nerdtree.git
+[submodule "home/.vim/bundle/tslime"]
+	path = home/.vim/bundle/tslime
+	url = git://github.com/kikijump/tslime.vim.git
+[submodule "home/.vim/bundle/fugitive"]
+	path = home/.vim/bundle/fugitive
+	url = git://github.com/tpope/vim-fugitive.git
+[submodule "home/.vim/bundle/powerline"]
+	path = home/.vim/bundle/powerline
+	url = git://github.com/Lokaltog/vim-powerline.git
+[submodule "home/.vim/bundle/rails"]
+	path = home/.vim/bundle/rails
+	url = git://github.com/tpope/vim-rails.git
+[submodule "home/.vim/bundle/scratch"]
+	path = home/.vim/bundle/scratch
+	url = git://github.com/duff/vim-scratch.git
+[submodule "home/.vim/bundle/web-indent"]
+	path = home/.vim/bundle/web-indent
+	url = git://github.com/lukaszb/vim-web-indent.git
