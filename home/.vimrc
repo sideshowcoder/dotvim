@@ -326,9 +326,5 @@ function! RunTests(filename)
     end
 endfunction
 
-" CommandT
-nnoremap <leader>r :CommandTFlush<cr>
-nnoremap <leader>d :CommandT<cr>
-
 " NERDTree
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
