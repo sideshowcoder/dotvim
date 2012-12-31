@@ -1,0 +1,14 @@
+Sideshowcoders vim setup
+========================
+
+This is my personal vim setup, managed via
+[homesick](https://github.com/technicalpickles/homesick).
+
+Install
+-------
+Install via Homesick
+
+    $ homesick clone git@github.com:sideshowcoder/sideshowvim.git
+    $ homesick symlink sideshowvim
+
+
