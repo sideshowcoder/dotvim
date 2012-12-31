@@ -326,5 +326,10 @@ function! RunTests(filename)
     end
 endfunction
 
+" Configure Ctrl-P
+let g:ctrlp_map = '<leader>d'
+let g:ctrlp_cmd = 'CtrlP'
+let g:ctrlp_working_path_mode = 'ra'
+
 " NERDTree
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
