@@ -35,6 +35,9 @@ endif
 " off by default
 set nospell
 
+" change current working directory to current file
+autocmd BufEnter * silent! lcd %:p:h
+
 " Linewrap Navigation
 map j gj
 map k gk
@@ -328,7 +331,7 @@ endfunction
 
 " Configure Ctrl-P
 let g:ctrlp_map = '<leader>d'
-let g:ctrlp_cmd = 'CtrlP'
+let g:ctrlp_cmd = 'CtrlPMixed'
 let g:ctrlp_working_path_mode = 'ra'
 
 " NERDTree
