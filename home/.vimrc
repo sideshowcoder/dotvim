@@ -35,9 +35,6 @@ endif
 " off by default
 set nospell
 
-" change current working directory to current file
-autocmd BufEnter * silent! lcd %:p:h
-
 " Linewrap Navigation
 map j gj
 map k gk
@@ -114,6 +111,8 @@ set guioptions-=T
 " highlicht column and lin
 set cursorline
 set cursorcolumn
+" number the lines
+set number
 
 " Miscellaneous
 " Don't emulate vi
@@ -177,8 +176,6 @@ set showcmd
 set hlsearch
 " show matching brackets
 set showmatch
-" Show line numbers relative
-set relativenumber
 " Hide the mouse pointer while typing
 set mousehide
 " Set nice colors
