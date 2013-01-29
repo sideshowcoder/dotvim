@@ -316,6 +316,8 @@ function! RunTests(filename)
     else
         if filereadable("script/test")
             exec ":!script/test " . a:filename
+        elseif filereadable("zeus.json")
+            exec ":!zeus rspec " . a:filename
         elseif filereadable("Gemfile")
             exec ":!bundle exec rspec " . a:filename
         elseif !empty(glob("*.js")) " this is a js project so we try jasmin-node
