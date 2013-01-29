@@ -34,3 +34,6 @@
 [submodule "home/.vim/bundle/web-indent"]
 	path = home/.vim/bundle/web-indent
 	url = git://github.com/lukaszb/vim-web-indent.git
+[submodule "home/.vim/bundle/indent-guides"]
+	path = home/.vim/bundle/indent-guides
+	url = git://github.com/nathanaelkane/vim-indent-guides.git
