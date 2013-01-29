@@ -180,6 +180,7 @@ set showmatch
 set mousehide
 " Set nice colors
 set t_Co=256
+set background=dark
 colorscheme zenburn
 " always show tabbar
 set showtabline=1
