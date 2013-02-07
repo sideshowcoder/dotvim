@@ -180,8 +180,8 @@ set showmatch
 set mousehide
 " Set nice colors
 set t_Co=256
-set background=dark
 colorscheme zenburn
+set background=dark
 " always show tabbar
 set showtabline=1
 " how many tenths of a second to blink matching brackets for
@@ -210,6 +210,7 @@ au BufNewFile,BufRead *.markdown set filetype=mkd
 au BufNewFile,BufRead *.ru set filetype=ruby
 au BufNewFile,BufRead *.thor set filetype=ruby
 au BufNewFile,BufRead Gemfile set filetype=ruby
+au BufNewFile,BufRead Vagrantfile set filetype=ruby
 
 
 " remove trailing whitespace
@@ -317,6 +318,8 @@ function! RunTests(filename)
     else
         if filereadable("script/test")
             exec ":!script/test " . a:filename
+        if filereadable("script/rails_scripts/test")
+            exec ":!script/rails_scripts/test " . a:filename
         elseif filereadable("zeus.json")
             exec ":!zeus rspec " . a:filename
         elseif filereadable("Gemfile")

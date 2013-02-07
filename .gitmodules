@@ -37,3 +37,6 @@
 [submodule "home/.vim/bundle/indent-guides"]
 	path = home/.vim/bundle/indent-guides
 	url = git://github.com/nathanaelkane/vim-indent-guides.git
+[submodule "home/.vim/bundle/puppet"]
+	path = home/.vim/bundle/puppet
+	url = git://github.com/rodjek/vim-puppet.git

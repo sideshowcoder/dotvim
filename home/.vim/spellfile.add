@@ -30,3 +30,5 @@ todolist
 dotfiles
 vim
 config
+ActiveRecord
+ConnectionAdapters
