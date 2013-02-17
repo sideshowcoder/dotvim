@@ -40,3 +40,12 @@
 [submodule "home/.vim/bundle/puppet"]
 	path = home/.vim/bundle/puppet
 	url = git://github.com/rodjek/vim-puppet.git
+[submodule "home/.vim/bundle/less"]
+	path = home/.vim/bundle/less
+	url = https://github.com/groenewege/vim-less.git
+[submodule "home/.vim/bundle/vimerl"]
+	path = home/.vim/bundle/vimerl
+	url = git@github.com:jimenezrick/vimerl.git
+[submodule "home/.vim/bundle/ruby-xmpfilter"]
+	path = home/.vim/bundle/ruby-xmpfilter
+	url = git@github.com:t9md/vim-ruby-xmpfilter.git

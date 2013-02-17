@@ -204,9 +204,9 @@ nnoremap <leader><space> :noh<cr>
 
 " Costum filetype extensions
 au BufNewFile,BufRead *.ejs set filetype=html
-au BufNewFile,BufRead *.mdown set filetype=mkd
+au BufNewFile,BufRead *.mdown set filetype=markdown
 au BufNewFile,BufRead *.json set filetype=javascript
-au BufNewFile,BufRead *.markdown set filetype=mkd
+au BufNewFile,BufRead *.markdown set filetype=markdown
 au BufNewFile,BufRead *.ru set filetype=ruby
 au BufNewFile,BufRead *.thor set filetype=ruby
 au BufNewFile,BufRead Gemfile set filetype=ruby
@@ -318,7 +318,7 @@ function! RunTests(filename)
     else
         if filereadable("script/test")
             exec ":!script/test " . a:filename
-        if filereadable("script/rails_scripts/test")
+        elseif filereadable("script/rails_scripts/test")
             exec ":!script/rails_scripts/test " . a:filename
         elseif filereadable("zeus.json")
             exec ":!zeus rspec " . a:filename
@@ -332,10 +332,20 @@ function! RunTests(filename)
     end
 endfunction
 
-" Configure Ctrl-P
+" Ctrl-P
 let g:ctrlp_map = '<leader>d'
 let g:ctrlp_cmd = 'CtrlPMixed'
 let g:ctrlp_working_path_mode = 'ra'
+
+" Xmpfilter
+nmap <buffer> <leader>x <Plug>(xmpfilter-run)
+xmap <buffer> <leader>x <Plug>(xmpfilter-run)
+imap <buffer> <leader>x <Plug>(xmpfilter-run)
+
+nmap <buffer> <leader>xx <Plug>(xmpfilter-mark)
+xmap <buffer> <leader>xx <Plug>(xmpfilter-mark)
+imap <buffer> <leader>xx <Plug>(xmpfilter-mark)
+
 
 " NERDTree
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
