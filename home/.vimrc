@@ -346,6 +346,9 @@ nmap <buffer> <leader>xx <Plug>(xmpfilter-mark)
 xmap <buffer> <leader>xx <Plug>(xmpfilter-mark)
 imap <buffer> <leader>xx <Plug>(xmpfilter-mark)
 
+" Closetag
+:let g:closetag_html_style=1
+autocmd Filetype html,xml,eruby source ~/.vim/scripts/closetag.vim
 
 " NERDTree
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
