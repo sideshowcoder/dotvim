@@ -49,3 +49,6 @@
 [submodule "home/.vim/bundle/ruby-xmpfilter"]
 	path = home/.vim/bundle/ruby-xmpfilter
 	url = git@github.com:t9md/vim-ruby-xmpfilter.git
+[submodule "home/.vim/bundle/closetag"]
+	path = home/.vim/bundle/closetag
+	url = git://github.com/vim-scripts/closetag.vim.git
