@@ -213,6 +213,12 @@ au BufNewFile,BufRead Gemfile set filetype=ruby
 au BufNewFile,BufRead Vagrantfile set filetype=ruby
 
 
+" Ctags
+" move down tag <C-]> move up tag <C-t>
+" retag
+nnoremap <leader>rt :!ctags -R .<CR>
+
+
 " remove trailing whitespace
 nnoremap <leader>W :%s/\s\+$//<cr>:let @/=''<CR>
 " remove trailing whitespace on save
@@ -336,6 +342,8 @@ endfunction
 let g:ctrlp_map = '<leader>d'
 let g:ctrlp_cmd = 'CtrlPMixed'
 let g:ctrlp_working_path_mode = 'ra'
+nnoremap <leader>. :CtrlPTag<cr>
+
 
 " Xmpfilter
 nmap <buffer> <leader>x <Plug>(xmpfilter-run)
