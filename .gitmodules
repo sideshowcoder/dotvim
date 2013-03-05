@@ -4,9 +4,6 @@
 [submodule "home/.vim/bundle/todotxt"]
 	path = home/.vim/bundle/todotxt
 	url = git@github.com:sideshowcoder/vimtodotxt.git
-[submodule "home/.vim/bundle/ack"]
-	path = home/.vim/bundle/ack
-	url = git://github.com/mileszs/ack.vim.git
 [submodule "home/.vim/bundle/ctrlp"]
 	path = home/.vim/bundle/ctrlp
 	url = git://github.com/kien/ctrlp.vim.git
