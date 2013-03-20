@@ -93,6 +93,7 @@ endif
 if has("gui_gtk")
 	set guifont=Inconsolata\ 8
 endif
+
 " don't blink and whistle
 set visualbell
 set t_vb=
@@ -101,8 +102,6 @@ set noerrorbells
 set statusline=%F%m%r%h%w\ %{fugitive#statusline()}\ [TYPE=%Y]\ %=[POS=%04l,%04v][%p%%]\ [LEN=%L]
 " always show the status line
 set laststatus=2
-" make the powerline fancy
-let g:Powerline_symbols="fancy"
 
 " dont show the scrollbars since they are useless anyway
 set guioptions-=L
@@ -125,8 +124,6 @@ set nowritebackup
 set noswapfile
 " use the Systemclipboard
 set clipboard=unnamed
-" Command line two lines high
-set ch=1
 set showmode
 " Show current pos
 set ruler
@@ -166,7 +163,7 @@ set wrap
 set linebreak
 set nolist
 " Spelling Languages
-set spelllang=de,en
+set spelllang=en,de
 set langmenu=en
 " Search while typing
 set incsearch
@@ -180,8 +177,8 @@ set showmatch
 set mousehide
 " Set nice colors
 set t_Co=256
-colorscheme zenburn
-set background=dark
+colorscheme github
+set background=light
 " always show tabbar
 set showtabline=1
 " how many tenths of a second to blink matching brackets for
@@ -212,20 +209,21 @@ au BufNewFile,BufRead *.thor set filetype=ruby
 au BufNewFile,BufRead Gemfile set filetype=ruby
 au BufNewFile,BufRead Vagrantfile set filetype=ruby
 
-
 " Ctags
 " move down tag <C-]> move up tag <C-t>
 " retag
-nnoremap <leader>rt :!ctags -R .<CR>
+nmap <leader>rt :!ctags -R .<CR>
 
+nmap <leader>mate :!mate %:p<CR>
 
 " remove trailing whitespace
 nnoremap <leader>W :%s/\s\+$//<cr>:let @/=''<CR>
 " remove trailing whitespace on save
 autocmd BufWritePost * :%s/\s\+$//e
-
-" Make coffeescript linter work
-let coffee_linter = '/usr/local/bin/coffeelint'
+"
+" Snippets
+iab _pry require "pry"<cr>binding.pry
+iab _log console.log(
 
 " Run JSHint if there is a jshint.json present in the project
 autocmd FileType javascript map <leader>h :call RunJSHint()<cr>
@@ -245,13 +243,6 @@ function! RunJSHint(...)
     exec ":!jshint --config " . options_file . " " . @%
   end
 endfunction
-
-" Commands
-nmap <leader>mate :!mate %:p<CR>
-
-" Snippets
-iab _pry require "pry"<cr>binding.pry
-iab _log console.log(
 
 " Run tests for Ruby and RoR
 autocmd FileType ruby map <leader>T :call RunTestFile()<cr>
@@ -343,7 +334,6 @@ let g:ctrlp_map = '<leader>d'
 let g:ctrlp_cmd = 'CtrlPMixed'
 let g:ctrlp_working_path_mode = 'ra'
 nnoremap <leader>. :CtrlPTag<cr>
-
 
 " Xmpfilter
 nmap <buffer> <leader>x <Plug>(xmpfilter-run)
