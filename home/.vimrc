@@ -107,9 +107,6 @@ set laststatus=2
 set guioptions-=L
 set guioptions-=r
 set guioptions-=T
-" highlicht column and lin
-set cursorline
-set cursorcolumn
 " number the lines
 set number
 
@@ -179,6 +176,7 @@ set mousehide
 set t_Co=256
 colorscheme github
 set background=light
+set nocursorline
 " always show tabbar
 set showtabline=1
 " how many tenths of a second to blink matching brackets for
