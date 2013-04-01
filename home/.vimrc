@@ -212,7 +212,7 @@ au BufNewFile,BufRead Vagrantfile set filetype=ruby
 " retag
 nmap <leader>rt :!ctags -R .<CR>
 
-nmap <leader>mate :!mate %:p<CR>
+nmap <leader>oe :!open -a TextEdit %:p<CR>
 
 " remove trailing whitespace
 nnoremap <leader>W :%s/\s\+$//<cr>:let @/=''<CR>
