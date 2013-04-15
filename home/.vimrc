@@ -8,7 +8,6 @@
 runtime! autoload/pathogen.vim
 if exists('g:loaded_pathogen')
   call pathogen#infect()
-  set spellfile=~/.vim/spellfile.add
 end
 
 " Language and encoding
@@ -48,7 +47,7 @@ if has("gui_running")
 endif
 " set best fonts for system
 if has("gui_macvim") || has("gui_mac")
-	set guifont=Inconsolata:h13
+	set guifont=Inconsolata:h14
 endif
 
 " don't blink and whistle
@@ -82,7 +81,6 @@ set ignorecase
 set mouse=nvi
 set wildmenu
 set wildmode=list:longest
-set nospell
 
 " Editing
 if &t_Co > 2 || has("gui_running")
@@ -104,7 +102,6 @@ set textwidth=0
 set wrap
 set linebreak
 set nolist
-set spelllang=en,de
 set langmenu=en
 set incsearch
 set showcmd
@@ -143,9 +140,12 @@ nnoremap <leader><leader> <c-^>
 
 " Spellchecker ,ss
 if v:version >= 700
+  set spellfile=~/.vim/spellfile.add
+  set spelllang=en,de
   setlocal spell spelllang=en
   nmap <leader>ss :set spell!<CR>
 endif
+set nospell
 
 " Smart Tab completion
 function! InsertTabWrapper()
@@ -162,7 +162,7 @@ inoremap <s-tab> <c-n>
 " toggle show trailing whitespace
 nmap <silent> <leader>s :set nolist!<cr>
 set listchars=tab:▸\ ,eol:¬
-set list
+set nolist
 
 " Ctags move down tag <C-]> move up tag <C-t>
 nmap <leader>rt :!ctags -R .<CR>
