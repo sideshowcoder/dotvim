@@ -116,7 +116,7 @@ nnoremap <leader><space> :noh<cr>
 
 " Theme
 set t_Co=256
-colorscheme github
+colorscheme zenburn
 set background=light
 set nocursorline
 set mat=10

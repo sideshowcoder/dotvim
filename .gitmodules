@@ -31,3 +31,6 @@
 [submodule "home/.vim/bundle/github-colorscheme"]
 	path = home/.vim/bundle/github-colorscheme
 	url = git@github.com:ricardovaleriano/vim-github-theme.git
+[submodule "home/.vim/bundle/zenburn"]
+	path = home/.vim/bundle/zenburn
+	url = https://github.com/jnurmine/Zenburn.git
