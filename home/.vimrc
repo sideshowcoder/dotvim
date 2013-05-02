@@ -116,13 +116,13 @@ nnoremap <leader><space> :noh<cr>
 
 " Theme
 set t_Co=256
-colorscheme zenburn
-set background=light
+set background=dark
+colorscheme solarized
 set nocursorline
 set mat=10
 set showtabline=1
-set wiw=100
-set winminwidth=60
+set wiw=80
+set winminwidth=40
 set so=10
 
 " Filetypes
@@ -147,18 +147,6 @@ if v:version >= 700
 endif
 set nospell
 
-" Smart Tab completion
-function! InsertTabWrapper()
-  let col = col('.') - 1
-  if !col || getline('.')[col - 1] !~ '\k'
-    return "\<tab>"
-  else
-    return "\<c-p>"
-  endif
-endfunction
-inoremap <tab> <c-r>=InsertTabWrapper()<cr>
-inoremap <s-tab> <c-n>
-
 " toggle show trailing whitespace
 nmap <silent> <leader>s :set nolist!<cr>
 set listchars=tab:▸\ ,eol:¬
@@ -171,6 +159,9 @@ nmap <leader>oe :!open -a TextEdit %:p<CR>
 " Remove trailing whitespace
 nnoremap <leader>W :%s/\s\+$//<cr>:let @/=''<CR>
 autocmd BufWritePost * :%s/\s\+$//e
+
+" Move to directoy of current active file
+"autocmd BufEnter * silent! lcd %:p:h
 
 " Ctrl-P
 let g:ctrlp_map = '<leader>d'
@@ -192,3 +183,10 @@ autocmd Filetype html,xml,eruby source ~/.vim/scripts/closetag.vim
 
 " NERDTree
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+
+" Custom mappings
+map <leader>mn :sp ~/Dropbox/Notes/scratch.txt<cr>
+map <leader>rs :source $MYVIMRC<cr>
+map <leader>ev :sp $MYVIMRC<cr>
+" reindet the whole buffer
+map <leader>ri gg=G 
