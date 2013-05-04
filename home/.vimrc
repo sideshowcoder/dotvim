@@ -188,5 +188,6 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTree
 map <leader>mn :sp ~/Dropbox/Notes/scratch.txt<cr>
 map <leader>rs :source $MYVIMRC<cr>
 map <leader>ev :sp $MYVIMRC<cr>
+map <leader>oe :!open -a TextEdit %<cr>
 " reindet the whole buffer
 map <leader>ri gg=G 
