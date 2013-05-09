@@ -184,10 +184,17 @@ autocmd Filetype html,xml,eruby source ~/.vim/scripts/closetag.vim
 " NERDTree
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 
+" Golang
+set rtp+=$GOROOT/misc/vim
+
+" R
+let vimrplugin_screenplugin = 0
+
+
 " Custom mappings
 map <leader>mn :sp ~/Dropbox/Notes/scratch.txt<cr>
 map <leader>rs :source $MYVIMRC<cr>
 map <leader>ev :sp $MYVIMRC<cr>
 map <leader>oe :!open -a TextEdit %<cr>
 " reindet the whole buffer
-map <leader>ri gg=G 
+map <leader>ri gg=G
