@@ -196,5 +196,5 @@ map <leader>mn :sp ~/Dropbox/Notes/scratch.txt<cr>
 map <leader>rs :source $MYVIMRC<cr>
 map <leader>ev :sp $MYVIMRC<cr>
 map <leader>oe :!open -a TextEdit %<cr>
-" reindet the whole buffer
-map <leader>ri gg=G
+" reindet the whole buffer and save position
+map <leader>ri :norm mz<cr>gg=G:norm 'z<cr>
