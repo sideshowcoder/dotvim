@@ -170,12 +170,12 @@ let g:ctrlp_working_path_mode = 'ra'
 nnoremap <leader>. :CtrlPTag<cr>
 
 " Xmpfilter
-nmap <buffer> <leader>x <Plug>(xmpfilter-run)
-xmap <buffer> <leader>x <Plug>(xmpfilter-run)
-imap <buffer> <leader>x <Plug>(xmpfilter-run)
-nmap <buffer> <leader>xx <Plug>(xmpfilter-mark)
-xmap <buffer> <leader>xx <Plug>(xmpfilter-mark)
-imap <buffer> <leader>xx <Plug>(xmpfilter-mark)
+autocmd FileType ruby nmap <buffer> <leader>x <Plug>(xmpfilter-run)
+autocmd Filetype ruby xmap <buffer> <leader>x <Plug>(xmpfilter-run)
+autocmd Filetype ruby imap <buffer> <leader>x <Plug>(xmpfilter-run)
+autocmd Filetype ruby nmap <buffer> <leader>xx <Plug>(xmpfilter-mark)
+autocmd Filetype ruby xmap <buffer> <leader>xx <Plug>(xmpfilter-mark)
+autocmd Filetype ruby imap <buffer> <leader>xx <Plug>(xmpfilter-mark)
 
 " Closetag
 :let g:closetag_html_style=1
