@@ -43,11 +43,11 @@ vnoremap <F1> <ESC>
 " interface
 " turn off icons in interface
 if has("gui_running")
-	set guioptions-=T
+  set guioptions-=T
 endif
 " set best fonts for system
 if has("gui_macvim") || has("gui_mac")
-	set guifont=Inconsolata:h14
+  set guifont=Inconsolata:h14
 endif
 
 " don't blink and whistle
@@ -84,13 +84,13 @@ set wildmode=list:longest
 
 " Editing
 if &t_Co > 2 || has("gui_running")
-	syntax on
-	syntax sync fromstart
+  syntax on
+  syntax sync fromstart
 endif
 if has("autocmd")
-	filetype on
-	filetype indent on
-	filetype plugin on
+  filetype on
+  filetype indent on
+  filetype plugin on
 endif
 set backspace=2
 set autoindent
