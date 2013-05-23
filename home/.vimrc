@@ -128,6 +128,8 @@ set so=10
 " Filetypes
 au BufNewFile,BufRead *.ejs set filetype=html
 au BufNewFile,BufRead *.mdown set filetype=markdown
+au BufNewFile,BufRead *.md set filetype=markdown
+au BufNewFile,BufRead *.txt set filetype=text
 au BufNewFile,BufRead *.json set filetype=javascript
 au BufNewFile,BufRead *.markdown set filetype=markdown
 au BufNewFile,BufRead *.ru set filetype=ruby
@@ -153,7 +155,7 @@ set listchars=tab:▸\ ,eol:¬
 set nolist
 
 " Ctags move down tag <C-]> move up tag <C-t>
-nmap <leader>rt :!ctags -R .<CR>
+nmap <leader>rt :!ctags .<CR>
 nmap <leader>oe :!open -a TextEdit %:p<CR>
 
 " Remove trailing whitespace
@@ -177,6 +179,9 @@ autocmd Filetype ruby nmap <buffer> <leader>xx <Plug>(xmpfilter-mark)
 autocmd Filetype ruby xmap <buffer> <leader>xx <Plug>(xmpfilter-mark)
 autocmd Filetype ruby imap <buffer> <leader>xx <Plug>(xmpfilter-mark)
 
+" Text
+autocmd Filetype text, markdown set textwidth=80
+
 " Closetag
 :let g:closetag_html_style=1
 autocmd Filetype html,xml,eruby source ~/.vim/scripts/closetag.vim
@@ -190,6 +195,9 @@ set rtp+=$GOROOT/misc/vim
 " R
 let vimrplugin_screenplugin = 0
 
+" rooter
+let g:rooter_patterns = ['Rakefile', '.git/', 'Gemfile']
+let g:rooter_manual_only = 1
 
 " Custom mappings
 map <leader>mn :sp ~/Dropbox/Notes/scratch.txt<cr>
@@ -198,3 +206,4 @@ map <leader>ev :sp $MYVIMRC<cr>
 map <leader>oe :!open -a TextEdit %<cr>
 " reindet the whole buffer and save position
 map <leader>ri :norm mz<cr>gg=G:norm 'z<cr>
+map <leader>dt <Plug>TaskList
