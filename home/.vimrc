@@ -117,16 +117,17 @@ nnoremap <leader><space> :noh<cr>
 " Theme
 set t_Co=256
 set background=dark
-colorscheme solarized
+colorscheme zenburn
 set nocursorline
 set mat=10
 set showtabline=1
-set wiw=80
+set wiw=84
 set winminwidth=40
 set so=10
 
 " Filetypes
 au BufNewFile,BufRead *.ejs set filetype=html
+au BufNewFile,BufRead todo.txt set filetype=todotxt
 au BufNewFile,BufRead *.mdown set filetype=markdown
 au BufNewFile,BufRead *.md set filetype=markdown
 au BufNewFile,BufRead *.txt set filetype=text
@@ -180,7 +181,7 @@ autocmd Filetype ruby xmap <buffer> <leader>xx <Plug>(xmpfilter-mark)
 autocmd Filetype ruby imap <buffer> <leader>xx <Plug>(xmpfilter-mark)
 
 " Text
-autocmd Filetype text, markdown set textwidth=80
+autocmd Filetype text,markdown set textwidth=80
 
 " Closetag
 :let g:closetag_html_style=1
@@ -206,4 +207,19 @@ map <leader>ev :sp $MYVIMRC<cr>
 map <leader>oe :!open -a TextEdit %<cr>
 " reindet the whole buffer and save position
 map <leader>ri :norm mz<cr>gg=G:norm 'z<cr>
-map <leader>dt <Plug>TaskList
+map <leader>lt <Plug>TaskList
+
+" highlight long lines
+nnoremap <Leader>H :call<SID>LongLineHLToggle()<cr>
+hi OverLength ctermbg=none cterm=none
+match OverLength /\%>80v/
+fun! s:LongLineHLToggle()
+  if !exists('w:longlinehl')
+    let w:longlinehl = matchadd('ErrorMsg', '.\%>80v', 0)
+    echo "Long lines highlighted"
+  else
+    call matchdelete(w:longlinehl)
+    unl w:longlinehl
+    echo "Long lines unhighlighted"
+  endif
+endfunction
