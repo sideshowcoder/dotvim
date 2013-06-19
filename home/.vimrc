@@ -35,6 +35,15 @@ nnoremap <Right> :vertical resize -5<CR>
 nnoremap <Up> :resize +5<CR>
 nnoremap <Down> :resize -5<CR>
 
+" Split switching made easy
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
+set splitbelow
+set splitright
+
+
 " get rid of the F1 help menu
 inoremap <F1> <ESC>
 nnoremap <F1> <ESC>
@@ -201,9 +210,10 @@ let g:rooter_patterns = ['Rakefile', '.git/', 'Gemfile']
 let g:rooter_manual_only = 1
 
 " Custom mappings
-map <leader>mn :sp ~/Dropbox/Notes/scratch.txt<cr>
+map <leader>mn :vsplit ~/Dropbox/Notes/scratch.txt<cr>
+map <leader>mt :vsplit ~/Dropbox/todo.txt\|:set filetype=todotxt<cr>
 map <leader>rs :source $MYVIMRC<cr>
-map <leader>ev :sp $MYVIMRC<cr>
+map <leader>ev :vsplit $MYVIMRC<cr>
 map <leader>oe :!open -a TextEdit %<cr>
 " reindet the whole buffer and save position
 map <leader>ri :norm mz<cr>gg=G:norm 'z<cr>
