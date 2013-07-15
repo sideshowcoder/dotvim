@@ -165,8 +165,8 @@ set listchars=tab:▸\ ,eol:¬
 set nolist
 
 " Ctags move down tag <C-]> move up tag <C-t>
-nmap <leader>rt :!ctags .<CR>
-nmap <leader>oe :!open -a TextEdit %:p<CR>
+nmap <leader>rt :!ctags *<CR>
+nmap <leader>oe :!mate %:p<CR>
 
 " Remove trailing whitespace
 nnoremap <leader>W :%s/\s\+$//<cr>:let @/=''<CR>
@@ -198,6 +198,7 @@ autocmd Filetype html,xml,eruby source ~/.vim/scripts/closetag.vim
 
 " NERDTree
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+let NERDTreeIgnore = ['\.pyc$', '\.beam$']
 
 " Golang
 set rtp+=$GOROOT/misc/vim
