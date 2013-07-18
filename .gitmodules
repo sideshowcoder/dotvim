@@ -67,3 +67,6 @@
 [submodule "home/.vim/bundle/trailing-whitespace"]
 	path = home/.vim/bundle/trailing-whitespace
 	url = https://github.com/bronson/vim-trailing-whitespace
+[submodule "home/.vim/bundle/vimerl"]
+	path = home/.vim/bundle/vimerl
+	url = git@github.com:jimenezrick/vimerl.git
