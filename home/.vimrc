@@ -159,7 +159,7 @@ if v:version >= 700
 endif
 set nospell
 
-" toggle show trailing whitespace
+" toggle show whitespace
 nmap <silent> <leader>s :set nolist!<cr>
 set listchars=tab:▸\ ,eol:¬
 set nolist
@@ -167,10 +167,6 @@ set nolist
 " Ctags move down tag <C-]> move up tag <C-t>
 nmap <leader>rt :!ctags *<CR>
 nmap <leader>oe :!mate %:p<CR>
-
-" Remove trailing whitespace
-nnoremap <leader>W :%s/\s\+$//<cr>:let @/=''<CR>
-autocmd BufWritePost * :%s/\s\+$//e
 
 " Move to directoy of current active file
 "autocmd BufEnter * silent! lcd %:p:h
