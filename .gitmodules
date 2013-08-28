@@ -70,3 +70,9 @@
 [submodule "home/.vim/bundle/vimerl"]
 	path = home/.vim/bundle/vimerl
 	url = git@github.com:jimenezrick/vimerl.git
+[submodule "home/.vim/bundle/vim-racket"]
+	path = home/.vim/bundle/vim-racket
+	url = https://github.com/wlangstroth/vim-racket.git
+[submodule "home/.vim/bundle/rainbow_parentheses"]
+	path = home/.vim/bundle/rainbow_parentheses
+	url = https://github.com/kien/rainbow_parentheses.vim.git
