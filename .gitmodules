@@ -69,10 +69,13 @@
 	url = https://github.com/bronson/vim-trailing-whitespace
 [submodule "home/.vim/bundle/vimerl"]
 	path = home/.vim/bundle/vimerl
-	url = git@github.com:jimenezrick/vimerl.git
+	url = git@github.com:aszlig/vimerl.git
 [submodule "home/.vim/bundle/vim-racket"]
 	path = home/.vim/bundle/vim-racket
 	url = https://github.com/wlangstroth/vim-racket.git
 [submodule "home/.vim/bundle/rainbow_parentheses"]
 	path = home/.vim/bundle/rainbow_parentheses
 	url = https://github.com/kien/rainbow_parentheses.vim.git
+[submodule "home/.vim/bundle/vim-pad"]
+	path = home/.vim/bundle/vim-pad
+	url = git@github.com:fmoralesc/vim-pad.git

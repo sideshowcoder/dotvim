@@ -56,7 +56,8 @@ if has("gui_running")
 endif
 " set best fonts for system
 if has("gui_macvim") || has("gui_mac")
-  set guifont=Inconsolata:h14
+  set guifont=Source\ Code\ Pro\ Light:h13
+  :h14
 endif
 
 " don't blink and whistle
@@ -81,7 +82,12 @@ set autoread
 set nobackup
 set nowritebackup
 set noswapfile
-set clipboard=unnamed
+
+" tmux does not use the unnamed clipboard? WTF?
+if $TMUX == ''
+  set clipboard+=unnamed
+endif
+
 set showmode
 set ruler
 set hidden
@@ -151,17 +157,17 @@ au BufNewFile,BufRead Vagrantfile set filetype=ruby
 " Switch to last open file
 nnoremap <leader><leader> <c-^>
 
-" Spellchecker ,ss
+" Spellchecker ,sp
 if v:version >= 700
   set spellfile=~/.vim/spellfile.add
   set spelllang=en,de
   setlocal spell spelllang=en
-  nmap <leader>ss :set spell!<CR>
+  nmap <leader>sp :set spell!<CR>
 endif
 set nospell
 
-" toggle show whitespace
-nmap <silent> <leader>s :set nolist!<cr>
+" toggle show whitespace ,w
+nmap <silent> <leader>w :set nolist!<cr>
 set listchars=tab:▸\ ,eol:¬
 set nolist
 
@@ -215,7 +221,6 @@ map <leader>mn :vsplit ~/Dropbox/Notes/scratch.txt<cr>
 map <leader>mt :vsplit ~/Dropbox/todo.txt\|:set filetype=todotxt<cr>
 map <leader>rs :source $MYVIMRC<cr>
 map <leader>ev :vsplit $MYVIMRC<cr>
-map <leader>oe :!open -a TextEdit %<cr>
 " reindet the whole buffer and save position
 map <leader>ri :norm mz<cr>gg=G:norm 'z<cr>
 map <leader>lt <Plug>TaskList
@@ -239,3 +244,6 @@ endfunction
 map <leader>fw :FixWhitespace<cr>
 autocmd BufWritePre * :FixWhitespace
 
+" configure vim-pad for notes
+let g:pad_dir = '~/Dropbox/Notes'
+let g:pad_window_height = 20
