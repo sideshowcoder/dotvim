@@ -76,3 +76,6 @@
 [submodule "home/.vim/bundle/vim-pad"]
 	path = home/.vim/bundle/vim-pad
 	url = git@github.com:fmoralesc/vim-pad.git
+[submodule "home/.vim/bundle/vimerl"]
+	path = home/.vim/bundle/vimerl
+	url = git@github.com:jimenezrick/vimerl.git
