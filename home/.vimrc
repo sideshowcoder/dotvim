@@ -17,6 +17,9 @@ set langmenu=en_US.UTF-8
 let maplocalleader = ","
 let mapleader = ","
 
+" make the command line behave like an interactive shell
+" set shellcmdflag=-ic
+
 " Linewrap Navigation
 map j gj
 map k gk
@@ -153,6 +156,11 @@ au BufNewFile,BufRead *.thor set filetype=ruby
 au BufNewFile,BufRead Gemfile set filetype=ruby
 au BufNewFile,BufRead Gruntfile set filetype=javascript
 au BufNewFile,BufRead Vagrantfile set filetype=ruby
+" Erlang filetypes prodly presented by OTP and rebar
+au BufNewFile,BufRead *.app.src set filetype=erlang
+au BufNewFile,BufRead rebar.conf set filetype=erlang
+au BufNewFile,BufRead rebar.config set filetype=erlang
+au BufNewFile,BufRead app.config set filetype=erlang
 
 " Switch to last open file
 nnoremap <leader><leader> <c-^>
@@ -192,11 +200,13 @@ autocmd Filetype ruby nmap <buffer> <leader>xx <Plug>(xmpfilter-mark)
 autocmd Filetype ruby xmap <buffer> <leader>xx <Plug>(xmpfilter-mark)
 autocmd Filetype ruby imap <buffer> <leader>xx <Plug>(xmpfilter-mark)
 
+
 " Text
 autocmd Filetype text,markdown set textwidth=80
 
 " Todo
 autocmd BufRead todo.txt set filetype=todotxt
+
 
 " Closetag
 :let g:closetag_html_style=1
