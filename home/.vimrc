@@ -3,7 +3,6 @@
 " philipp.fehre@googlemail.com											                    "
 " http://www.sideshowcoder.com											                    "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
 " Autoload bundles and setup spelling
 runtime! autoload/pathogen.vim
 if exists('g:loaded_pathogen')
@@ -19,6 +18,7 @@ let mapleader = ","
 
 " make the command line behave like an interactive shell
 " set shellcmdflag=-ic
+
 
 " Linewrap Navigation
 map j gj
@@ -37,15 +37,14 @@ nnoremap <Left> :vertical resize +5<CR>
 nnoremap <Right> :vertical resize -5<CR>
 nnoremap <Up> :resize +5<CR>
 nnoremap <Down> :resize -5<CR>
-
+"
 " Split switching made easy
-nnoremap <C-J> <C-W><C-J>
-nnoremap <C-K> <C-W><C-K>
-nnoremap <C-L> <C-W><C-L>
-nnoremap <C-H> <C-W><C-H>
+nnoremap <C-J> <C-W>w
+nnoremap <C-K> <C-W>W
+nnoremap <C-H> <C-W>h
+nnoremap <C-L> <C-W>l
 set splitbelow
 set splitright
-
 
 " get rid of the F1 help menu
 inoremap <F1> <ESC>
@@ -59,8 +58,7 @@ if has("gui_running")
 endif
 " set best fonts for system
 if has("gui_macvim") || has("gui_mac")
-  set guifont=Source\ Code\ Pro\ Light:h13
-  :h14
+  set guifont=Inconsolata:h13
 endif
 
 " don't blink and whistle
@@ -134,8 +132,8 @@ nnoremap <leader><space> :noh<cr>
 
 " Theme
 set t_Co=256
-set background=dark
-colorscheme solarized
+set background=light
+colorscheme github
 set nocursorline
 set mat=10
 set showtabline=1
@@ -252,8 +250,9 @@ endfunction
 
 " remove trailing whitespace by command or on save
 map <leader>fw :FixWhitespace<cr>
-autocmd BufWritePre * :FixWhitespace
+"autocmd BufWritePre * :FixWhitespace
 
 " configure vim-pad for notes
 let g:pad_dir = '~/Dropbox/Notes'
 let g:pad_window_height = 20
+let g:pad_default_file_extension = '.txt'

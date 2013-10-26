@@ -79,3 +79,12 @@
 [submodule "home/.vim/bundle/vim-handlebars"]
 	path = home/.vim/bundle/vim-handlebars
 	url = git://github.com/nono/vim-handlebars.git
+[submodule "home/.vim/bundle/vim-fireplace"]
+	path = home/.vim/bundle/vim-fireplace
+	url = git://github.com/tpope/vim-fireplace.git
+[submodule "home/.vim/bundle/vim-classpath"]
+	path = home/.vim/bundle/vim-classpath
+	url = git://github.com/tpope/vim-classpath.git
+[submodule "home/.vim/bundle/vim-clojure-static"]
+	path = home/.vim/bundle/vim-clojure-static
+	url = git://github.com/guns/vim-clojure-static.git
