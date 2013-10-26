@@ -88,3 +88,6 @@
 [submodule "home/.vim/bundle/vim-clojure-static"]
 	path = home/.vim/bundle/vim-clojure-static
 	url = git://github.com/guns/vim-clojure-static.git
+[submodule "home/.vim/bundle/vimroom"]
+	path = home/.vim/bundle/vimroom
+	url = https://github.com/mikewest/vimroom
