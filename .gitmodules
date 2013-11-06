@@ -91,3 +91,9 @@
 [submodule "home/.vim/bundle/vimroom"]
 	path = home/.vim/bundle/vimroom
 	url = https://github.com/mikewest/vimroom
+[submodule "home/.vim/bundle/funcoo.vim"]
+	path = home/.vim/bundle/funcoo.vim
+	url = https://github.com/rizzatti/funcoo.vim.git
+[submodule "home/.vim/bundle/dash.vim"]
+	path = home/.vim/bundle/dash.vim
+	url = https://github.com/rizzatti/dash.vim.git

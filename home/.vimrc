@@ -17,7 +17,7 @@ let maplocalleader = ","
 let mapleader = ","
 
 " make the command line behave like an interactive shell
-" set shellcmdflag=-ic
+set shell=$SHELL
 
 
 " Linewrap Navigation
@@ -256,3 +256,6 @@ map <leader>fw :FixWhitespace<cr>
 let g:pad_dir = '~/Dropbox/Notes'
 let g:pad_window_height = 20
 let g:pad_default_file_extension = '.txt'
+
+" configure dash
+nmap <silent> <leader>g <Plug>DashSearch
