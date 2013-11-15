@@ -58,7 +58,7 @@ if has("gui_running")
 endif
 " set best fonts for system
 if has("gui_macvim") || has("gui_mac")
-  set guifont=Inconsolata:h13
+  set guifont=Inconsolata:h14
 endif
 
 " don't blink and whistle
@@ -259,3 +259,9 @@ let g:pad_default_file_extension = '.txt'
 
 " configure dash
 nmap <silent> <leader>g <Plug>DashSearch
+nmap <silent> <leader>G <Plug>DashGlobalSearch
+
+let g:dash_map = {
+      \ 'ruby'       : 'ruby2',
+      \ 'javascript' : 'javascript'
+      \ }
