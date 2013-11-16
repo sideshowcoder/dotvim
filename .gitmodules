@@ -28,18 +28,12 @@
 [submodule "home/.vim/bundle/ruby-xmpfilter"]
 	path = home/.vim/bundle/ruby-xmpfilter
 	url = git://github.com/t9md/vim-ruby-xmpfilter.git
-[submodule "home/.vim/bundle/github-colorscheme"]
-	path = home/.vim/bundle/github-colorscheme
-	url = git://github.com/ricardovaleriano/vim-github-theme.git
 [submodule "home/.vim/bundle/zenburn"]
 	path = home/.vim/bundle/zenburn
 	url = https://github.com/jnurmine/Zenburn.git
 [submodule "home/.vim/bundle/vim-rooter"]
 	path = home/.vim/bundle/vim-rooter
 	url = git://github.com/airblade/vim-rooter.git
-[submodule "home/.vim/bundle/vim-colors-solarized"]
-	path = home/.vim/bundle/vim-colors-solarized
-	url = git://github.com/altercation/vim-colors-solarized.git
 [submodule "home/.vim/bundle/surround"]
 	path = home/.vim/bundle/surround
 	url = git://github.com/tpope/vim-surround.git
@@ -97,3 +91,6 @@
 [submodule "home/.vim/bundle/dash.vim"]
 	path = home/.vim/bundle/dash.vim
 	url = https://github.com/rizzatti/dash.vim.git
+[submodule "home/.vim/bundle/syntastic"]
+	path = home/.vim/bundle/syntastic
+	url = https://github.com/scrooloose/syntastic.git

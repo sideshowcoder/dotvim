@@ -16,10 +16,6 @@ set langmenu=en_US.UTF-8
 let maplocalleader = ","
 let mapleader = ","
 
-" make the command line behave like an interactive shell
-set shell=$SHELL
-
-
 " Linewrap Navigation
 map j gj
 map k gk
@@ -58,7 +54,7 @@ if has("gui_running")
 endif
 " set best fonts for system
 if has("gui_macvim") || has("gui_mac")
-  set guifont=Inconsolata:h14
+  set guifont=Source\ Code\ Pro\ Light:h12
 endif
 
 " don't blink and whistle
@@ -132,8 +128,8 @@ nnoremap <leader><space> :noh<cr>
 
 " Theme
 set t_Co=256
-set background=light
-colorscheme github
+set background=dark
+colorscheme zenburn
 set nocursorline
 set mat=10
 set showtabline=1
