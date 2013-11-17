@@ -246,7 +246,6 @@ endfunction
 
 " remove trailing whitespace by command or on save
 map <leader>fw :FixWhitespace<cr>
-"autocmd BufWritePre * :FixWhitespace
 
 " configure vim-pad for notes
 let g:pad_dir = '~/Dropbox/Notes'
