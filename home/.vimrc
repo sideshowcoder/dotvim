@@ -129,7 +129,7 @@ nnoremap <leader><space> :noh<cr>
 " Theme
 set t_Co=256
 set background=dark
-colorscheme zenburn
+colorscheme solarized
 set nocursorline
 set mat=10
 set showtabline=1
