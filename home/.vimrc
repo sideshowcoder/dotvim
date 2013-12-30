@@ -163,7 +163,7 @@ nnoremap <leader><leader> <c-^>
 if v:version >= 700
   set spellfile=~/.vim/spellfile.add
   set spelllang=en,de
-  setlocal spell spelllang=en
+  setlocal spell spelllang=en_us
   nmap <leader>sp :set spell!<CR>
 endif
 set nospell
