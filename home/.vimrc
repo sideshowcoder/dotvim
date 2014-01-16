@@ -261,6 +261,13 @@ let g:dash_map = {
       \ 'javascript' : 'javascript'
       \ }
 
+" configure syntastic
+" don't check text files by default since atdtool makes a call to the
+" internet which takes a loooong time!
+let g:syntastic_mode_map = { 'mode': 'active',
+                           \ 'active_filetypes': [],
+                           \ 'passive_filetypes': ['markdown', 'text', 'rdoc'] }
+
 " use ag instead of grep
 if executable('ag')
   " Use ag over grep
