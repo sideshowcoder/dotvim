@@ -105,3 +105,13 @@ Hostings
 Hashringes
 Puzzleteil
 Hashring
+BINDIR
+MANDIR
+env
+Die beschriebene Konfiguration lässt eine einfache Nutzung zu, für den Produktiven Einsatz ist allerdings zu bedenken das sich Riak CS nicht eignet um Global als Server Verfügbar zu sein. Basho selbst empfiehlt auf die bekannten und erprobten Load-Balancer und Proxy Lösungen zurückzugreifen. Da die Kommunikation via HTTP stattfindet ist dies durch Nginx oder HAProxy leicht möglich, aber auch Hardware Lösungen funktionieren in der Regel ohne Probleme. Damit lässt sich sicherstellen das nicht Jeder Nutzer direkt mit dem Cluster kommuniziert sondern die Verbindungen unter der Kontrolle eines Load-Balancers sind welcher genau für diese Art von Verkehr Entwickelt ist. Dies Schützt den Cluster Primär davor nicht von Schadhaften oder manipulierten Clients belastet zu werden, da dies Speziell im Mobilen Umfeld ein bekanntest Problem darstellt. Besonderes Mobile Endgeräte können durch instabile Verbindungen ansonsten zu hoher Last führen.
+Erlang
+Solr
+Konfliktlösungstrategien
+rspec
+README
+takeoffconf
