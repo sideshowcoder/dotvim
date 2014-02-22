@@ -150,6 +150,7 @@ au BufNewFile,BufRead *.thor set filetype=ruby
 au BufNewFile,BufRead Gemfile set filetype=ruby
 au BufNewFile,BufRead Gruntfile set filetype=javascript
 au BufNewFile,BufRead Vagrantfile set filetype=ruby
+au BufNewFile,BufRead Podfile set filetype=ruby
 " Erlang filetypes prodly presented by OTP and rebar
 au BufNewFile,BufRead *.app.src set filetype=erlang
 au BufNewFile,BufRead rebar.conf set filetype=erlang
@@ -208,7 +209,7 @@ autocmd Filetype html,xml,eruby source ~/.vim/scripts/closetag.vim
 
 " NERDTree
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
-let NERDTreeIgnore = ['\.pyc$', '\.beam$']
+let NERDTreeIgnore = ['\.pyc$', '\.beam$', '\.o$']
 
 " Golang
 set rtp+=$GOROOT/misc/vim
