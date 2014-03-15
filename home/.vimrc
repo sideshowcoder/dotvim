@@ -146,6 +146,7 @@ au BufNewFile,BufRead *.md set filetype=markdown
 au BufNewFile,BufRead *.txt set filetype=text
 au BufNewFile,BufRead *.json set filetype=javascript
 au BufNewFile,BufRead *.ru set filetype=ruby
+au BufNewFile,BufRead *.god set filetype=ruby
 au BufNewFile,BufRead *.thor set filetype=ruby
 au BufNewFile,BufRead Gemfile set filetype=ruby
 au BufNewFile,BufRead Gruntfile set filetype=javascript
