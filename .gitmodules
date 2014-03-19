@@ -10,12 +10,6 @@
 [submodule "home/.vim/bundle/nerdtree"]
 	path = home/.vim/bundle/nerdtree
 	url = git://github.com/scrooloose/nerdtree.git
-[submodule "home/.vim/bundle/fugitive"]
-	path = home/.vim/bundle/fugitive
-	url = git://github.com/tpope/vim-fugitive.git
-[submodule "home/.vim/bundle/rails"]
-	path = home/.vim/bundle/rails
-	url = git://github.com/tpope/vim-rails.git
 [submodule "home/.vim/bundle/web-indent"]
 	path = home/.vim/bundle/web-indent
 	url = git://github.com/lukaszb/vim-web-indent.git
@@ -43,9 +37,6 @@
 [submodule "home/.vim/bundle/ack-vim"]
 	path = home/.vim/bundle/ack-vim
 	url = git://github.com/mileszs/ack.vim.git
-[submodule "home/.vim/bundle/vim-rbenv"]
-	path = home/.vim/bundle/vim-rbenv
-	url = git://github.com/tpope/vim-rbenv.git
 [submodule "home/.vim/bundle/task-list"]
 	path = home/.vim/bundle/task-list
 	url = git://github.com/vim-scripts/TaskList.vim.git
@@ -70,15 +61,6 @@
 [submodule "home/.vim/bundle/vim-handlebars"]
 	path = home/.vim/bundle/vim-handlebars
 	url = git://github.com/nono/vim-handlebars.git
-[submodule "home/.vim/bundle/vim-fireplace"]
-	path = home/.vim/bundle/vim-fireplace
-	url = git://github.com/tpope/vim-fireplace.git
-[submodule "home/.vim/bundle/vim-classpath"]
-	path = home/.vim/bundle/vim-classpath
-	url = git://github.com/tpope/vim-classpath.git
-[submodule "home/.vim/bundle/vim-clojure-static"]
-	path = home/.vim/bundle/vim-clojure-static
-	url = git://github.com/guns/vim-clojure-static.git
 [submodule "home/.vim/bundle/funcoo.vim"]
 	path = home/.vim/bundle/funcoo.vim
 	url = https://github.com/rizzatti/funcoo.vim.git
