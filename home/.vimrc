@@ -62,7 +62,7 @@ set visualbell
 set t_vb=
 set noerrorbells
 " show something usefull in statusline
-set statusline=%F%m%r%h%w\ %{fugitive#statusline()}\ [TYPE=%Y]\ %=[POS=%04l,%04v][%p%%]\ [LEN=%L]
+set statusline=%F%m%r%h%w\ [TYPE=%Y]\ %=[POS=%04l,%04v][%p%%]\ [LEN=%L]
 " always show the status line
 set laststatus=2
 

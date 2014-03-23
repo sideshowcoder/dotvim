@@ -76,3 +76,6 @@
 [submodule "home/.vim/bundle/solarized"]
 	path = home/.vim/bundle/solarized
 	url = https://github.com/altercation/vim-colors-solarized
+[submodule "home/.vim/bundle/vim-jade"]
+	path = home/.vim/bundle/vim-jade
+	url = https://github.com/digitaltoad/vim-jade.git
