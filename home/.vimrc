@@ -176,7 +176,7 @@ set listchars=tab:▸\ ,eol:¬
 set nolist
 
 " Ctags move down tag <C-]> move up tag <C-t>
-nmap <leader>rt :!ctags *<CR>
+nmap <leader>rt :!ctags --fields=+l -R .<CR>
 nmap <leader>oe :!mate %:p<CR>
 
 " Move to directoy of current active file
@@ -249,11 +249,6 @@ endfunction
 " remove trailing whitespace by command or on save
 map <leader>fw :FixWhitespace<cr>
 
-" configure vim-pad for notes
-let g:pad_dir = '~/Dropbox/Notes'
-let g:pad_window_height = 20
-let g:pad_default_file_extension = '.txt'
-
 " configure dash
 nmap <silent> <leader>g <Plug>DashSearch
 nmap <silent> <leader>G <Plug>DashGlobalSearch
@@ -270,6 +265,14 @@ let g:syntastic_mode_map = { 'mode': 'active',
                            \ 'active_filetypes': [],
                            \ 'passive_filetypes': ['markdown', 'text', 'rdoc'] }
 
+let g:syntastic_error_symbol = '✗'
+let g:syntastic_warning_symbol = '⚠'
+
+" change checker
+" let g:syntastic_<filetype>_checkers = ['<checker-name>']
+" macruby / rubymotion
+" let g:syntastic_ruby_checkers = ['macruby']
+
 " use ag instead of grep
 if executable('ag')
   " Use ag over grep
@@ -281,6 +284,7 @@ if executable('ag')
   " ag is fast enough that CtrlP doesn't need to cache
   let g:ctrlp_use_caching = 0
 endif
+
 " bind K to grep word under cursor
 nnoremap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
 " bind \ (backward slash) to grep shortcut
