@@ -70,9 +70,6 @@
 [submodule "home/.vim/bundle/syntastic"]
 	path = home/.vim/bundle/syntastic
 	url = https://github.com/scrooloose/syntastic.git
-[submodule "home/.vim/bundle/you-complete-me"]
-	path = home/.vim/bundle/you-complete-me
-	url = git@github.com:Valloric/YouCompleteMe.git
 [submodule "home/.vim/bundle/solarized"]
 	path = home/.vim/bundle/solarized
 	url = https://github.com/altercation/vim-colors-solarized
