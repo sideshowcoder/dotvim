@@ -177,6 +177,7 @@ set nolist
 
 " Ctags move down tag <C-]> move up tag <C-t>
 nmap <leader>rt :!ctags --fields=+l -R .<CR>
+set tags+=./tags
 nmap <leader>oe :!mate %:p<CR>
 
 " Move to directoy of current active file
