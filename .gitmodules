@@ -85,3 +85,6 @@
 [submodule "home/.vim/bundle/webapi-vim"]
 	path = home/.vim/bundle/webapi-vim
 	url = https://github.com/mattn/webapi-vim
+[submodule "home/.vim/bundle/fireplace"]
+	path = home/.vim/bundle/fireplace
+	url = https://github.com/tpope/vim-fireplace.git
