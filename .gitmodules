@@ -88,3 +88,18 @@
 [submodule "home/.vim/bundle/fireplace"]
 	path = home/.vim/bundle/fireplace
 	url = https://github.com/tpope/vim-fireplace.git
+[submodule "home/.vim/bundle/vim-leiningen"]
+	path = home/.vim/bundle/vim-leiningen
+	url = git://github.com/tpope/vim-leiningen.git
+[submodule "home/.vim/bundle/vim-projectionist"]
+	path = home/.vim/bundle/vim-projectionist
+	url = git://github.com/tpope/vim-projectionist.git
+[submodule "home/.vim/bundle/vim-dispatch"]
+	path = home/.vim/bundle/vim-dispatch
+	url = git://github.com/tpope/vim-dispatch.git
+[submodule "home/.vim/bundle/vim-misc"]
+	path = home/.vim/bundle/vim-misc
+	url = https://github.com/xolox/vim-misc.git
+[submodule "home/.vim/bundle/vim-notes"]
+	path = home/.vim/bundle/vim-notes
+	url = https://github.com/xolox/vim-notes.git

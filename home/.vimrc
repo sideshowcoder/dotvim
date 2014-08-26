@@ -234,7 +234,6 @@ let g:rooter_patterns = ['Rakefile', '.git/', 'Gemfile']
 let g:rooter_manual_only = 1
 
 " Custom mappings
-map <leader>mn :vsplit ~/Dropbox/Notes/scratch.txt<cr>
 map <leader>mt :vsplit ~/Dropbox/todo.txt\|:set filetype=todotxt<cr>
 map <leader>rs :source $MYVIMRC<cr>
 map <leader>ev :vsplit $MYVIMRC<cr>
@@ -305,3 +304,7 @@ nnoremap \ :Ag<SPACE>
 " gist vim
 let g:gist_clip_command = 'pbcopy'
 let g:gist_detect_filetype = 1
+
+" vim-notes
+let g:notes_directories = ['~/Dropbox/Notes']
+let g:notes_suffix = '.txt'
