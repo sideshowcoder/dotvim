@@ -103,3 +103,6 @@
 [submodule "home/.vim/bundle/vim-notes"]
 	path = home/.vim/bundle/vim-notes
 	url = https://github.com/xolox/vim-notes.git
+[submodule "home/.vim/bundle/fugative"]
+	path = home/.vim/bundle/fugative
+	url = https://github.com/tpope/vim-fugitive.git

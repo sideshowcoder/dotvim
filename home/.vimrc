@@ -277,6 +277,8 @@ let g:syntastic_mode_map = { 'mode': 'active',
 
 let g:syntastic_error_symbol = '✗'
 let g:syntastic_warning_symbol = '⚠'
+" put compile options in .syntastic_cpp_config or set this variable
+"let g:syntastic_cpp_config_file = '.cpp_config'
 
 " change checker
 " let g:syntastic_<filetype>_checkers = ['<checker-name>']
