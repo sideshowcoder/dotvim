@@ -162,7 +162,7 @@ au BufNewFile,BufRead Gemfile set filetype=ruby
 au BufNewFile,BufRead Gruntfile set filetype=javascript
 au BufNewFile,BufRead Vagrantfile set filetype=ruby
 au BufNewFile,BufRead Podfile set filetype=ruby
-" Erlang filetypes prodly presented by OTP and rebar
+" Erlang filetypes proudly presented by OTP and rebar
 au BufNewFile,BufRead *.app.src set filetype=erlang
 au BufNewFile,BufRead rebar.conf set filetype=erlang
 au BufNewFile,BufRead rebar.config set filetype=erlang
@@ -188,7 +188,7 @@ set nolist
 " Ctags move down tag <C-]> move up tag <C-t>
 nmap <leader>rt :!ctags --fields=+l -R .<CR>
 set tags+=./tags
-nmap <leader>oe :!mate %:p<CR>
+nmap <leader>oe :!mate '%:p'<CR>
 
 " Move to directoy of current active file
 "autocmd BufEnter * silent! lcd %:p:h
@@ -306,6 +306,10 @@ nnoremap \ :Ag<SPACE>
 " gist vim
 let g:gist_clip_command = 'pbcopy'
 let g:gist_detect_filetype = 1
+
+" supertab
+" use context completion to work with eclim (user defined or just complete)
+" let g:SuperTabDefaultCompletionType = "context"
 
 " vim-notes
 let g:notes_directories = ['~/Dropbox/Notes']
