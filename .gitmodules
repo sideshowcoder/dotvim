@@ -106,3 +106,6 @@
 [submodule "home/.vim/bundle/fugative"]
 	path = home/.vim/bundle/fugative
 	url = https://github.com/tpope/vim-fugitive.git
+[submodule "home/.vim/bundle/scratch"]
+	path = home/.vim/bundle/scratch
+	url = https://github.com/mtth/scratch.vim

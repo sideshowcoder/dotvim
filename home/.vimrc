@@ -311,6 +311,5 @@ let g:gist_detect_filetype = 1
 " use context completion to work with eclim (user defined or just complete)
 " let g:SuperTabDefaultCompletionType = "context"
 
-" vim-notes
-let g:notes_directories = ['~/Dropbox/Notes']
-let g:notes_suffix = '.txt'
+" Scratch
+nmap <leader>n :Scratch<cr>
