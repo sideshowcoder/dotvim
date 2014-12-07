@@ -1,8 +1,7 @@
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" VIMRC Configuration File                                              "
-" philipp.fehre@googlemail.com											                    "
-" http://www.sideshowcoder.com											                    "
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" VIMRC Configuration File
+" philipp@fehre.co.uk
+" http://www.sideshowcoder.com
+
 " Autoload bundles and setup spelling
 runtime! autoload/pathogen.vim
 if exists('g:loaded_pathogen')
@@ -171,6 +170,9 @@ au BufNewFile,BufRead app.config set filetype=erlang
 " Switch to last open file
 nnoremap <leader><leader> <c-^>
 
+" Make the RVMs work
+set shell=/usr/local/bin/zsh
+
 " Spellchecker ,sp
 if v:version >= 700
   set spellfile=~/.vim/spellfile.add
@@ -188,10 +190,7 @@ set nolist
 " Ctags move down tag <C-]> move up tag <C-t>
 nmap <leader>rt :!ctags --fields=+l -R .<CR>
 set tags+=./tags
-nmap <leader>oe :!mate '%:p'<CR>
-
-" Move to directoy of current active file
-"autocmd BufEnter * silent! lcd %:p:h
+nmap <leader>oe :!mvim '%:p'<CR>
 
 " Ctrl-P
 let g:ctrlp_map = '<leader>d'
@@ -274,6 +273,7 @@ let g:dash_map = {
 let g:syntastic_mode_map = { 'mode': 'active',
                            \ 'active_filetypes': [],
                            \ 'passive_filetypes': ['markdown', 'text', 'rdoc'] }
+let g:syntastic_javascript_checkers = ['jshint']
 
 let g:syntastic_error_symbol = '✗'
 let g:syntastic_warning_symbol = '⚠'
@@ -309,7 +309,15 @@ let g:gist_detect_filetype = 1
 
 " supertab
 " use context completion to work with eclim (user defined or just complete)
-" let g:SuperTabDefaultCompletionType = "context"
+let g:SuperTabDefaultCompletionType = 'context'
+
 
 " Scratch
 nmap <leader>n :Scratch<cr>
+
+"""""""""""""""""""""""""""""""
+""" Yammer specifc commands """
+"""""""""""""""""""""""""""""""
+
+" run a workfeed test on vagrant from the workfeed directory
+nmap <leader>wt :!echo "cd /opt/workfeed && bundle exec ruby %" \| ssh -tt yammer-local-dev<cr>
