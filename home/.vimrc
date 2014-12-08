@@ -15,6 +15,17 @@ set langmenu=en_US.UTF-8
 let maplocalleader = ","
 let mapleader = ","
 
+" Notes
+map <leader>nn :edit ~/Dropbox/Notes/
+
+function SearchNotes()
+  let search = input("Search Notes: ")
+  Ag search -f ~/Dropbox/Notes
+endfunction
+
+map <leader>sn :call SearchNotes()<cr>
+
+
 " Linewrap Navigation
 map j gj
 map k gk
@@ -187,9 +198,6 @@ nmap <silent> <leader>w :set nolist!<cr>
 set listchars=tab:▸\ ,eol:¬
 set nolist
 
-" Ctags move down tag <C-]> move up tag <C-t>
-nmap <leader>rt :!ctags --fields=+l -R .<CR>
-set tags+=./tags
 nmap <leader>oe :!mvim '%:p'<CR>
 
 " Ctrl-P
@@ -320,4 +328,4 @@ nmap <leader>n :Scratch<cr>
 """""""""""""""""""""""""""""""
 
 " run a workfeed test on vagrant from the workfeed directory
-nmap <leader>wt :!echo "cd /opt/workfeed && bundle exec ruby %" \| ssh -tt yammer-local-dev<cr>
+nmap <leader>wt :!ssh -t yammer-local-dev bash -c "'source ~/.rbenvrc && cd /opt/workfeed && bundle exec ruby %'"<cr>
