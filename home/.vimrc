@@ -20,11 +20,18 @@ map <leader>nn :edit ~/Dropbox/Notes/
 
 function SearchNotes()
   let search = input("Search Notes: ")
-  Ag search -f ~/Dropbox/Notes
+  let cmd = 'Ag ' . search . ' -f ~/Dropbox/Notes'
+  exec cmd
 endfunction
 
 map <leader>sn :call SearchNotes()<cr>
 
+" Clear Vim quickfix list
+function ClearQuickfixList()
+  call setqflist([])
+endfunction
+command! ClearQuickfixList call ClearQuickfixList()
+nmap <leader>cf :ClearQuickfixList<cr>
 
 " Linewrap Navigation
 map j gj
@@ -159,6 +166,8 @@ set so=10
 
 " Filetypes
 au BufNewFile,BufRead *.ejs set filetype=html
+" Just make Txt look like markdown... it's all the same!
+au BufNewFile,BufRead *.txt set filetype=markdown
 au BufNewFile,BufRead todo.txt set filetype=todotxt
 au BufNewFile,BufRead *.mdown set filetype=markdown
 au BufNewFile,BufRead *.markdown set filetype=markdown
@@ -198,7 +207,9 @@ nmap <silent> <leader>w :set nolist!<cr>
 set listchars=tab:▸\ ,eol:¬
 set nolist
 
-nmap <leader>oe :!mvim '%:p'<CR>
+if executable('mate')
+  command! ExternalEditor !mate %
+end
 
 " Ctrl-P
 let g:ctrlp_map = '<leader>d'
@@ -305,6 +316,9 @@ if executable('ag')
   let g:ctrlp_use_caching = 0
 endif
 
+" Ctags so we can use Ctrl-] to jump
+command! ReTag !ctags -R .
+
 " bind K to grep word under cursor
 nnoremap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
 " bind \ (backward slash) to grep shortcut
@@ -314,6 +328,8 @@ nnoremap \ :Ag<SPACE>
 " gist vim
 let g:gist_clip_command = 'pbcopy'
 let g:gist_detect_filetype = 1
+let g:gist_open_browser_after_post = 1
+let g:gist_browser_command = 'open -a Google\ Chrome %URL%'
 
 " supertab
 " use context completion to work with eclim (user defined or just complete)
