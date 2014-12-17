@@ -207,9 +207,13 @@ nmap <silent> <leader>w :set nolist!<cr>
 set listchars=tab:▸\ ,eol:¬
 set nolist
 
-if executable('mate')
-  command! ExternalEditor !mate %
-end
+function OpenInExternalEditor()
+  if executable('mate')
+    let cmd = "!mate '" . expand("%") . "'"
+    exec cmd
+  endif
+endfunction
+command! ExternalEditor call OpenInExternalEditor()
 
 " Ctrl-P
 let g:ctrlp_map = '<leader>d'
