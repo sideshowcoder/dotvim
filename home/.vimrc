@@ -175,6 +175,7 @@ au BufNewFile,BufRead *.md set filetype=markdown
 au BufNewFile,BufRead *.txt set filetype=text
 au BufNewFile,BufRead *.json set filetype=javascript
 au BufNewFile,BufRead *.ru set filetype=ruby
+au BufNewFile,BufRead *.pill set filetype=ruby
 au BufNewFile,BufRead *.god set filetype=ruby
 au BufNewFile,BufRead *.thor set filetype=ruby
 au BufNewFile,BufRead Gemfile set filetype=ruby
@@ -320,8 +321,9 @@ if executable('ag')
   let g:ctrlp_use_caching = 0
 endif
 
-" Ctags so we can use Ctrl-] to jump
+" Ctags so we can use Ctrl-] to jump down and Ctrl-T to jump up
 command! ReTag !ctags -R .
+nnoremap <leader>rt :ReTag<cr>
 
 " bind K to grep word under cursor
 nnoremap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
@@ -337,7 +339,7 @@ let g:gist_browser_command = 'open -a Google\ Chrome %URL%'
 
 " supertab
 " use context completion to work with eclim (user defined or just complete)
-let g:SuperTabDefaultCompletionType = 'context'
+"let g:SuperTabDefaultCompletionType = 'context'
 
 
 " Scratch
