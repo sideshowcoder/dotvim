@@ -81,7 +81,7 @@ if has("gui_running")
 endif
 " set best fonts for system
 if has("gui_macvim") || has("gui_mac")
-  set guifont=Inconsolata:h13
+  set guifont=Inconsolata-dz:h12
 endif
 
 " don't blink and whistle
@@ -350,4 +350,4 @@ nmap <leader>n :Scratch<cr>
 """""""""""""""""""""""""""""""
 
 " run a workfeed test on vagrant from the workfeed directory
-nmap <leader>wt :!ssh -t yammer-local-dev bash -c "'source ~/.rbenvrc && cd /opt/workfeed && bundle exec ruby %'"<cr>
+nmap <leader>wt :!ssh -t yammer-local-dev bash -c "'source ~/.rbenvrc && cd /opt/workfeed && env DISABLE_COVERAGE=true bundle exec ruby %'"<cr>
