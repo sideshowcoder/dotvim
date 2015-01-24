@@ -220,7 +220,10 @@ command! ExternalEditor call OpenInExternalEditor()
 let g:ctrlp_map = '<leader>d'
 let g:ctrlp_cmd = 'CtrlPMixed'
 let g:ctrlp_working_path_mode = 'ra'
-nnoremap <leader>. :CtrlPTag<cr>
+let g:ctrlp_max_files = 0
+let g:ctrlp_max_height = 20
+let g:ctrlp_max_depth = 40
+nnoremap <leader>t :CtrlPTag<cr>
 
 " Xmpfilter
 autocmd FileType ruby nmap <buffer> <leader>x <Plug>(xmpfilter-run)
