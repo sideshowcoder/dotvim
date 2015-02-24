@@ -155,8 +155,8 @@ nnoremap <leader><space> :noh<cr>
 
 " Theme
 set t_Co=256
-set background=dark
-colorscheme solarized
+"set background=dark
+colorscheme github
 set nocursorline
 set mat=10
 set showtabline=1
@@ -342,6 +342,7 @@ let g:gist_browser_command = 'open -a Google\ Chrome %URL%'
 
 " supertab
 " use context completion to work with eclim (user defined or just complete)
+"let g:EclimCompletionMethod = 'omnifunc'
 "let g:SuperTabDefaultCompletionType = 'context'
 
 
