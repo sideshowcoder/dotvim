@@ -15,17 +15,6 @@ set langmenu=en_US.UTF-8
 let maplocalleader = ","
 let mapleader = ","
 
-" Notes
-map <leader>nn :edit ~/Dropbox/Notes/
-
-function SearchNotes()
-  let search = input("Search Notes: ")
-  let cmd = 'Ag ' . search . ' -f ~/Dropbox/Notes'
-  exec cmd
-endfunction
-
-map <leader>sn :call SearchNotes()<cr>
-
 " Clear Vim quickfix list
 function ClearQuickfixList()
   call setqflist([])
@@ -240,6 +229,11 @@ autocmd Filetype text,markdown set textwidth=80
 " Todo
 autocmd BufRead todo.txt set filetype=todotxt
 
+" Java
+autocmd Filetype java set tabstop=4
+autocmd Filetype java set softtabstop=4
+autocmd Filetype java set shiftwidth=4
+autocmd Filetype java set autoindent
 
 " Closetag
 :let g:closetag_html_style=1
