@@ -332,13 +332,7 @@ nnoremap \ :Ag<SPACE>
 let g:gist_clip_command = 'pbcopy'
 let g:gist_detect_filetype = 1
 let g:gist_open_browser_after_post = 1
-let g:gist_browser_command = 'open -a Google\ Chrome %URL%'
-
-" supertab
-" use context completion to work with eclim (user defined or just complete)
-"let g:EclimCompletionMethod = 'omnifunc'
-"let g:SuperTabDefaultCompletionType = 'context'
-
+let g:gist_browser_command = 'open -a Firefox %URL%'
 
 " Scratch
 nmap <leader>n :Scratch<cr>
