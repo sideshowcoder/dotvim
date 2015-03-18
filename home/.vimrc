@@ -78,7 +78,7 @@ set visualbell
 set t_vb=
 set noerrorbells
 " show something usefull in statusline
-set statusline=%F%m%r%h%w\ [TYPE=%Y]\ %=[POS=%04l,%04v][%p%%]\ [LEN=%L]
+set statusline=%F%m%r%h%w\ [TYPE=%Y]\ %=%{rvm#statusline()}\ [POS=%04l,%04v][%p%%]\ [LEN=%L]
 " always show the status line
 set laststatus=2
 
@@ -179,9 +179,6 @@ au BufNewFile,BufRead app.config set filetype=erlang
 
 " Switch to last open file
 nnoremap <leader><leader> <c-^>
-
-" Make the RVMs work
-set shell=/usr/local/bin/zsh
 
 " Spellchecker ,sp
 if v:version >= 700

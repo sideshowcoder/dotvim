@@ -88,3 +88,6 @@
 [submodule "home/.vim/bundle/github-colorscheme"]
 	path = home/.vim/bundle/github-colorscheme
 	url = git@github.com:endel/vim-github-colorscheme.git
+[submodule "home/.vim/bundle/rvm-vim"]
+	path = home/.vim/bundle/rvm-vim
+	url = https://github.com/tpope/vim-rvm.git
