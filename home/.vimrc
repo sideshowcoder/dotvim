@@ -282,26 +282,9 @@ nmap <silent> <leader>G <Plug>DashGlobalSearch
 
 let g:dash_map = {
       \ 'ruby'       : 'ruby2',
+      \ 'java'       : 'java',
       \ 'javascript' : 'javascript'
       \ }
-
-" configure syntastic
-" don't check text files by default since atdtool makes a call to the
-" internet which takes a loooong time!
-let g:syntastic_mode_map = { 'mode': 'active',
-                           \ 'active_filetypes': [],
-                           \ 'passive_filetypes': ['markdown', 'text', 'rdoc'] }
-let g:syntastic_javascript_checkers = ['jshint']
-
-let g:syntastic_error_symbol = '✗'
-let g:syntastic_warning_symbol = '⚠'
-" put compile options in .syntastic_cpp_config or set this variable
-"let g:syntastic_cpp_config_file = '.cpp_config'
-
-" change checker
-" let g:syntastic_<filetype>_checkers = ['<checker-name>']
-" macruby / rubymotion
-" let g:syntastic_ruby_checkers = ['macruby']
 
 " use ag instead of grep
 if executable('ag')
@@ -334,9 +317,8 @@ let g:gist_browser_command = 'open -a Firefox %URL%'
 " Scratch
 nmap <leader>n :Scratch<cr>
 
-"""""""""""""""""""""""""""""""
-""" Yammer specifc commands """
-"""""""""""""""""""""""""""""""
+" Supertab
+" Close the code preview completion after it is done
+let g:SuperTabClosePreviewOnPopupClose = 1
+let g:SuperTabDefaultCompletionType = 'context'
 
-" run a workfeed test on vagrant from the workfeed directory
-nmap <leader>wt :!ssh -t yammer-local-dev bash -c "'source ~/.rbenvrc && cd /opt/workfeed && env DISABLE_COVERAGE=true bundle exec ruby %'"<cr>

@@ -91,3 +91,6 @@
 [submodule "home/.vim/bundle/rvm-vim"]
 	path = home/.vim/bundle/rvm-vim
 	url = https://github.com/tpope/vim-rvm.git
+[submodule "home/.vim/bundle/vim-scala"]
+	path = home/.vim/bundle/vim-scala
+	url = git@github.com:derekwyatt/vim-scala.git
