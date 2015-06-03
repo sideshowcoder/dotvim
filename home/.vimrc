@@ -24,6 +24,7 @@ Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'bronson/vim-trailing-whitespace'
 Plugin 'jimenezrick/vimerl'
 Plugin 'jnurmine/Zenburn'
+Plugin 'tpope/vim-sensible'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
