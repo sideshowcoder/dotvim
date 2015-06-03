@@ -94,3 +94,9 @@
 [submodule "home/.vim/bundle/vim-scala"]
 	path = home/.vim/bundle/vim-scala
 	url = git@github.com:derekwyatt/vim-scala.git
+[submodule "home/.vim/bundle/expand-region"]
+	path = home/.vim/bundle/expand-region
+	url = git@github.com:terryma/vim-expand-region.git
+[submodule "home/.vim/bundle/vundle"]
+	path = home/.vim/bundle/vundle
+	url = https://github.com/gmarik/Vundle.vim.git
