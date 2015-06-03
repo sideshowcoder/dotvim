@@ -2,6 +2,33 @@
 " philipp@fehre.co.uk
 " http://www.sideshowcoder.com
 
+" Setup bundles via Vundle 
+set nocompatible
+filetype off
+
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+Plugin 'gmarik/Vundle.vim'
+Plugin 'kien/ctrlp.vim'
+Plugin 'rizzatti/dash.vim'
+Plugin 'terryma/vim-expand-region'
+Plugin 'tpope/vim-fugitive'
+Plugin 'rizzatti/funcoo.vim'
+Plugin 'scrooloose/nerdcommenter'
+Plugin 'scrooloose/nerdtree'
+Plugin 'rodjek/vim-puppet'
+Plugin 'tpope/vim-rvm'
+Plugin 'ervandew/supertab'
+Plugin 'christoomey/vim-tmux-navigator'
+Plugin 'bronson/vim-trailing-whitespace'
+Plugin 'jimenezrick/vimerl'
+Plugin 'jnurmine/Zenburn'
+
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+filetype plugin indent on    " required
+
 " Autoload bundles and setup spelling
 runtime! autoload/pathogen.vim
 if exists('g:loaded_pathogen')
@@ -63,6 +90,37 @@ nnoremap tn  :tabnext<Space>
 nnoremap tm  :tabm<Space>
 nnoremap td  :tabclose<CR>
 
+" copy paste from the systemclipboard via ,p
+vmap <leader>y "+y
+vmap <leader>d "+d
+nmap <leader>p "+p
+nmap <leader>P "+P
+vmap <leader>p "+p
+vmap <leader>P "+P
+
+" jump to the end of the pasted text by default
+vnoremap <silent> y y`]
+vnoremap <silent> p p`]
+nnoremap <silent> p p`]
+
+" visual paste should not replace my paste buffer
+function! RestoreRegister()
+  let @" = s:restore_reg
+  return ''
+endfunction
+function! s:Repl()
+  let s:restore_reg = @"
+  return "p@=RestoreRegister()\<cr>"
+endfunction
+vmap <silent> <expr> p <sid>Repl()
+
+" use ,v for visual line mode instead of Shift-V to make it more reachable
+nmap <leader>v V
+
+" Vim expand region
+vmap v <Plug>(expand_region_expand)
+vmap <C-v> <Plug>(expand_region_shrink)
+
 " interface
 " turn off icons in interface
 if has("gui_running")
@@ -90,7 +148,6 @@ set guioptions-=T
 set number
 
 " Miscellaneous
-set nocompatible
 set autoread
 set nobackup
 set nowritebackup
