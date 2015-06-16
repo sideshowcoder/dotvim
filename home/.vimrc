@@ -289,9 +289,6 @@ autocmd Filetype java set tabstop=4
 autocmd Filetype java set softtabstop=4
 autocmd Filetype java set shiftwidth=4
 autocmd Filetype java set autoindent
-" In Java we use JavaSearch provided by eclim instead of ctags because it's
-" smarter
-autocmd Filetype java nmap <C-]> :JavaSearch<cr>
 
 " Closetag
 :let g:closetag_html_style=1
