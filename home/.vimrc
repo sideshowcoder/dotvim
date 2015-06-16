@@ -129,7 +129,7 @@ if has("gui_running")
 endif
 " set best fonts for system
 if has("gui_macvim") || has("gui_mac")
-  set guifont=Inconsolata-dz:h12
+  set guifont=Inconsolata-dz:h11
 endif
 
 " don't blink and whistle
