@@ -2,7 +2,7 @@
 " philipp@fehre.co.uk
 " http://www.sideshowcoder.com
 
-" Setup bundles via Vundle 
+" Setup bundles via Vundle
 set nocompatible
 filetype off
 
@@ -24,9 +24,11 @@ Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'bronson/vim-trailing-whitespace'
 Plugin 'jimenezrick/vimerl'
 Plugin 'jnurmine/Zenburn'
+Plugin 'altercation/vim-colors-solarized'
 Plugin 'tpope/vim-sensible'
 
 " All of your Plugins must be added before the following line
+" To install new plugins after changing run :PluginInstall
 call vundle#end()            " required
 filetype plugin indent on    " required
 
@@ -49,6 +51,11 @@ function ClearQuickfixList()
 endfunction
 command! ClearQuickfixList call ClearQuickfixList()
 nmap <leader>cf :ClearQuickfixList<cr>
+" Jump to next location in current window, this is useful to jump between
+" errors
+map <leader>ln :lnext<cr>
+map <leader>lp :lprevious<cr>
+
 
 " Linewrap Navigation
 map j gj
@@ -203,7 +210,7 @@ nnoremap <leader><space> :noh<cr>
 " Theme
 set t_Co=256
 set background=dark
-colorscheme zenburn
+colorscheme solarized
 set nocursorline
 set mat=10
 set showtabline=1
