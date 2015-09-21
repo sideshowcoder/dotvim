@@ -23,9 +23,10 @@ Plugin 'ervandew/supertab'
 Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'bronson/vim-trailing-whitespace'
 Plugin 'jimenezrick/vimerl'
-Plugin 'jnurmine/Zenburn'
-Plugin 'altercation/vim-colors-solarized'
 Plugin 'tpope/vim-sensible'
+Plugin 'sideshowcoder/eclipse.vim'
+Plugin 'junegunn/seoul256.vim'
+Plugin 'croaky/vim-colors-github'
 
 " All of your Plugins must be added before the following line
 " To install new plugins after changing run :PluginInstall
@@ -211,7 +212,11 @@ nnoremap <leader><space> :noh<cr>
 set t_Co=256
 set background=dark
 colorscheme solarized
-set nocursorline
+" highlight debug line
+highlight EclimDebugLine ctermfg=white ctermbg=yellow
+" " Make the sign colum color same as line number column
+highlight clear SignColumn
+
 set mat=10
 set showtabline=1
 set wiw=84
@@ -296,11 +301,9 @@ autocmd Filetype java set tabstop=4
 autocmd Filetype java set softtabstop=4
 autocmd Filetype java set shiftwidth=4
 autocmd Filetype java set autoindent
-" Use Java search instead of CTags for Java
-autocmd Filetype java nmap <C-]> :JavaSearch<cr>
 
 " Closetag
-:let g:closetag_html_style=1
+let g:closetag_html_style=1
 autocmd Filetype html,xml,eruby source ~/.vim/scripts/closetag.vim
 
 " NERDTree
