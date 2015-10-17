@@ -27,6 +27,9 @@ Plugin 'tpope/vim-sensible'
 Plugin 'sideshowcoder/eclipse.vim'
 Plugin 'junegunn/seoul256.vim'
 Plugin 'croaky/vim-colors-github'
+Plugin 'altercation/vim-colors-solarized'
+Plugin 'scrooloose/syntastic'
+Plugin 'fsharp/vim-fsharp'
 
 " All of your Plugins must be added before the following line
 " To install new plugins after changing run :PluginInstall
@@ -303,6 +306,14 @@ autocmd Filetype java set shiftwidth=4
 autocmd Filetype java set autoindent
 " Use Java search instead of CTags for Java
 autocmd Filetype java nmap <C-]> :JavaSearch<cr>
+" Only Validate JVM files with Eclim
+let g:EclimJavaValidate = 1
+let g:EclimGroovyValidate = 1
+let g:EclimScalaValidate = 1
+let g:EclimCValidate = 0
+let g:EclimPhpValidate = 0
+let g:EclimPythonValidate = 0
+let g:EclimRubyValidate = 0
 
 " Closetag
 let g:closetag_html_style=1
