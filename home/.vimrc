@@ -214,8 +214,8 @@ nnoremap <leader><space> :noh<cr>
 
 " Theme
 set t_Co=256
-set background=dark
-colorscheme solarized
+set background=light
+colorscheme github
 " highlight debug line
 highlight EclimDebugLine ctermfg=white ctermbg=yellow
 " " Make the sign colum color same as line number column
