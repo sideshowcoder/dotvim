@@ -300,26 +300,6 @@ autocmd Filetype text,markdown set textwidth=80
 " Todo
 autocmd BufRead todo.txt set filetype=todotxt
 
-" Java
-autocmd Filetype java set tabstop=4
-autocmd Filetype java set softtabstop=4
-autocmd Filetype java set shiftwidth=4
-autocmd Filetype java set autoindent
-" Use Java search instead of CTags for Java
-autocmd Filetype java nmap <C-]> :JavaSearch<cr>
-" Only Validate JVM files with Eclim
-let g:EclimJavaValidate = 1
-let g:EclimGroovyValidate = 1
-let g:EclimScalaValidate = 1
-let g:EclimCValidate = 0
-let g:EclimPhpValidate = 0
-let g:EclimPythonValidate = 0
-let g:EclimRubyValidate = 0
-" Java Debugger Mappings
-autocmd Filetype java nmap <leader>n :JavaDebugStep over<cr>
-autocmd Filetype java nmap <leader>r :JavaDebugStep return<cr>
-
-
 " Closetag
 let g:closetag_html_style=1
 autocmd Filetype html,xml,eruby source ~/.vim/scripts/closetag.vim
