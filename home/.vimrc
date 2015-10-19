@@ -30,6 +30,7 @@ Plugin 'croaky/vim-colors-github'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'scrooloose/syntastic'
 Plugin 'fsharp/vim-fsharp'
+Plugin 'danielmiessler/VimBlog'
 
 " All of your Plugins must be added before the following line
 " To install new plugins after changing run :PluginInstall
@@ -314,6 +315,10 @@ let g:EclimCValidate = 0
 let g:EclimPhpValidate = 0
 let g:EclimPythonValidate = 0
 let g:EclimRubyValidate = 0
+" Java Debugger Mappings
+autocmd Filetype java nmap <leader>n :JavaDebugStep over<cr>
+autocmd Filetype java nmap <leader>r :JavaDebugStep return<cr>
+
 
 " Closetag
 let g:closetag_html_style=1
