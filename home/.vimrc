@@ -214,8 +214,8 @@ nnoremap <leader><space> :noh<cr>
 
 " Theme
 set t_Co=256
-set background=light
-colorscheme github
+set background=dark
+colorscheme solarized
 " highlight debug line
 highlight EclimDebugLine ctermfg=white ctermbg=yellow
 " " Make the sign colum color same as line number column
@@ -382,11 +382,13 @@ let g:gist_detect_filetype = 1
 let g:gist_open_browser_after_post = 1
 let g:gist_browser_command = 'open -a Firefox %URL%'
 
-" Scratch
-nmap <leader>n :Scratch<cr>
-
 " Supertab
 " Close the code preview completion after it is done
 let g:SuperTabClosePreviewOnPopupClose = 1
 let g:SuperTabDefaultCompletionType = 'context'
 
+" Syntastic
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+let g:syntastic_erlang_checkers = ['syntaxerl']
