@@ -22,14 +22,16 @@ Plugin 'tpope/vim-rvm'
 Plugin 'ervandew/supertab'
 Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'bronson/vim-trailing-whitespace'
-Plugin 'jimenezrick/vimerl'
 Plugin 'tpope/vim-sensible'
-Plugin 'sideshowcoder/eclipse.vim'
-Plugin 'junegunn/seoul256.vim'
-Plugin 'croaky/vim-colors-github'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'scrooloose/syntastic'
-Plugin 'fsharp/vim-fsharp'
+Plugin 'vim-erlang/vim-erlang-runtime'
+Plugin 'vim-erlang/vim-erlang-compiler'
+Plugin 'vim-erlang/vim-erlang-omnicomplete'
+Plugin 'vim-erlang/vim-erlang-tags'
+Plugin 'vim-erlang/vim-rebar'
+Plugin 'vim-erlang/vim-dialyzer'
+Plugin 'ppikula/vim-wrangler'
 Plugin 'danielmiessler/VimBlog'
 
 " All of your Plugins must be added before the following line
@@ -60,7 +62,6 @@ nmap <leader>cf :ClearQuickfixList<cr>
 " errors
 map <leader>ln :lnext<cr>
 map <leader>lp :lprevious<cr>
-
 
 " Linewrap Navigation
 map j gj
@@ -126,9 +127,6 @@ function! s:Repl()
   return "p@=RestoreRegister()\<cr>"
 endfunction
 vmap <silent> <expr> p <sid>Repl()
-
-" use ,v for visual line mode instead of Shift-V to make it more reachable
-nmap <leader>v V
 
 " Vim expand region
 vmap v <Plug>(expand_region_expand)
@@ -216,9 +214,7 @@ nnoremap <leader><space> :noh<cr>
 set t_Co=256
 set background=dark
 colorscheme solarized
-" highlight debug line
-highlight EclimDebugLine ctermfg=white ctermbg=yellow
-" " Make the sign colum color same as line number column
+" Make the sign colum color same as line number column
 highlight clear SignColumn
 
 set mat=10
@@ -268,13 +264,13 @@ nmap <silent> <leader>w :set nolist!<cr>
 set listchars=tab:▸\ ,eol:¬
 set nolist
 
-function OpenInExternalEditor()
-  if executable('mate')
-    let cmd = "!mate '" . expand("%") . "'"
+function OpenGUIEditor()
+  if executable('mvim')
+    let cmd = "!mvim '" . expand("%") . "'"
     exec cmd
   endif
 endfunction
-command! ExternalEditor call OpenInExternalEditor()
+command! OpenInGUI call OpenGUIEditor()
 
 " Ctrl-P
 let g:ctrlp_map = '<leader>d'
@@ -285,57 +281,39 @@ let g:ctrlp_max_height = 20
 let g:ctrlp_max_depth = 40
 nnoremap <leader>t :CtrlPTag<cr>
 
-" Xmpfilter
-autocmd FileType ruby nmap <buffer> <leader>x <Plug>(xmpfilter-run)
-autocmd Filetype ruby xmap <buffer> <leader>x <Plug>(xmpfilter-run)
-autocmd Filetype ruby imap <buffer> <leader>x <Plug>(xmpfilter-run)
-autocmd Filetype ruby nmap <buffer> <leader>xx <Plug>(xmpfilter-mark)
-autocmd Filetype ruby xmap <buffer> <leader>xx <Plug>(xmpfilter-mark)
-autocmd Filetype ruby imap <buffer> <leader>xx <Plug>(xmpfilter-mark)
-
-
 " Text
 autocmd Filetype text,markdown set textwidth=80
 
 " Todo
 autocmd BufRead todo.txt set filetype=todotxt
 
-" Java
-autocmd Filetype java set tabstop=4
-autocmd Filetype java set softtabstop=4
-autocmd Filetype java set shiftwidth=4
-autocmd Filetype java set autoindent
-" Use Java search instead of CTags for Java
-autocmd Filetype java nmap <C-]> :JavaSearch<cr>
-" Only Validate JVM files with Eclim
-let g:EclimJavaValidate = 1
-let g:EclimGroovyValidate = 1
-let g:EclimScalaValidate = 1
-let g:EclimCValidate = 0
-let g:EclimPhpValidate = 0
-let g:EclimPythonValidate = 0
-let g:EclimRubyValidate = 0
-" Java Debugger Mappings
-autocmd Filetype java nmap <leader>n :JavaDebugStep over<cr>
-autocmd Filetype java nmap <leader>r :JavaDebugStep return<cr>
-
-
 " Closetag
 let g:closetag_html_style=1
 autocmd Filetype html,xml,eruby source ~/.vim/scripts/closetag.vim
 
+" Ctags so we can use Ctrl-] to jump down and Ctrl-T to jump up
+command! ReTag !ctags -R .
+nmap <leader>rt :ReTag<cr>
+
+" ErlangTags for erlang
+autocmd Filetype erlang nmap <leader>rt :ErlangTags<cr>
+let g:erlangWranglerPath = '/Users/phil/Source/wrangler'
+"sample wrangler bindings
+autocmd FileType erlang vnoremap <leader>e :WranglerExtractFunction<ENTER>
+autocmd FileType erlang noremap  <leader>m :WranglerRenameModule<ENTER>
+autocmd FileType erlang noremap  <leader>f :WranglerRenameFunction<ENTER>
+autocmd FileType erlang noremap  <leader>v :WranglerRenameVariable<ENTER>
+autocmd FileType erlang noremap  <leader>p :WranglerRenameProcess<ENTER>
+autocmd FileType erlang noremap  <leader>mv :WranglerMoveFunction<ENTER>
+autocmd FileType erlang noremap  <leader>u :WranglerUndo<ENTER>
+
 " NERDTree
+" Close NERDTree when it is the last window
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 let NERDTreeIgnore = ['\.pyc$', '\.beam$', '\.o$']
 
-" Golang
-set rtp+=$GOROOT/misc/vim
-
-" R
-let vimrplugin_screenplugin = 0
-
 " rooter
-let g:rooter_patterns = ['Rakefile', '.git/', 'Gemfile']
+let g:rooter_patterns = ['Rakefile', '.git/', 'Gemfile', 'rebar.config']
 let g:rooter_manual_only = 1
 
 " Custom mappings
@@ -371,7 +349,8 @@ nmap <silent> <leader>G <Plug>DashGlobalSearch
 let g:dash_map = {
       \ 'ruby'       : 'ruby2',
       \ 'java'       : 'java',
-      \ 'javascript' : 'javascript'
+      \ 'javascript' : 'javascript',
+      \ 'erlang'     : 'erlang'
       \ }
 
 " use ag instead of grep
@@ -385,10 +364,6 @@ if executable('ag')
   " ag is fast enough that CtrlP doesn't need to cache
   let g:ctrlp_use_caching = 0
 endif
-
-" Ctags so we can use Ctrl-] to jump down and Ctrl-T to jump up
-command! ReTag !ctags -R .
-nnoremap <leader>rt :ReTag<cr>
 
 " bind K to grep word under cursor
 nnoremap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
@@ -411,4 +386,4 @@ let g:SuperTabDefaultCompletionType = 'context'
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
-let g:syntastic_erlang_checkers = ['syntaxerl']
+let g:syntastic_enable_erlang_checker = 0
