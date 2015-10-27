@@ -11,6 +11,7 @@ call vundle#begin()
 
 Plugin 'gmarik/Vundle.vim'
 Plugin 'kien/ctrlp.vim'
+Plugin 'JazzCore/ctrlp-cmatcher'
 Plugin 'rizzatti/dash.vim'
 Plugin 'terryma/vim-expand-region'
 Plugin 'tpope/vim-fugitive'
@@ -19,12 +20,13 @@ Plugin 'scrooloose/nerdcommenter'
 Plugin 'scrooloose/nerdtree'
 Plugin 'rodjek/vim-puppet'
 Plugin 'tpope/vim-rvm'
-Plugin 'ervandew/supertab'
 Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'bronson/vim-trailing-whitespace'
 Plugin 'tpope/vim-sensible'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'scrooloose/syntastic'
+Plugin 'Valloric/YouCompleteMe'
+Plugin 'endel/vim-github-colorscheme'
 Plugin 'vim-erlang/vim-erlang-runtime'
 Plugin 'vim-erlang/vim-erlang-compiler'
 Plugin 'vim-erlang/vim-erlang-omnicomplete'
@@ -139,7 +141,7 @@ if has("gui_running")
 endif
 " set best fonts for system
 if has("gui_macvim") || has("gui_mac")
-  set guifont=Inconsolata-dz:h11
+  set guifont=Inconsolata:h13
 endif
 
 " don't blink and whistle
@@ -212,8 +214,13 @@ nnoremap <leader><space> :noh<cr>
 
 " Theme
 set t_Co=256
-set background=dark
-colorscheme solarized
+if has("gui_running")
+  set background=light
+  colorscheme github
+else
+  set background=dark
+  colorscheme solarized
+end
 " Make the sign colum color same as line number column
 highlight clear SignColumn
 
@@ -273,13 +280,14 @@ endfunction
 command! OpenInGUI call OpenGUIEditor()
 
 " Ctrl-P
-let g:ctrlp_map = '<leader>d'
+let g:ctrlp_map = '<leader>t'
 let g:ctrlp_cmd = 'CtrlPMixed'
-let g:ctrlp_working_path_mode = 'ra'
+let g:ctrlp_working_path_mode = 'r'
 let g:ctrlp_max_files = 0
 let g:ctrlp_max_height = 20
 let g:ctrlp_max_depth = 40
-nnoremap <leader>t :CtrlPTag<cr>
+" This depends on the cmatcher plugin
+let g:ctrlp_match_func = {'match' : 'matcher#cmatch' }
 
 " Text
 autocmd Filetype text,markdown set textwidth=80
@@ -311,6 +319,7 @@ autocmd FileType erlang noremap  <leader>u :WranglerUndo<ENTER>
 " Close NERDTree when it is the last window
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 let NERDTreeIgnore = ['\.pyc$', '\.beam$', '\.o$']
+map <F8> :NERDTreeToggle<cr>
 
 " rooter
 let g:rooter_patterns = ['Rakefile', '.git/', 'Gemfile', 'rebar.config']
@@ -376,11 +385,6 @@ let g:gist_clip_command = 'pbcopy'
 let g:gist_detect_filetype = 1
 let g:gist_open_browser_after_post = 1
 let g:gist_browser_command = 'open -a Firefox %URL%'
-
-" Supertab
-" Close the code preview completion after it is done
-let g:SuperTabClosePreviewOnPopupClose = 1
-let g:SuperTabDefaultCompletionType = 'context'
 
 " Syntastic
 let g:syntastic_always_populate_loc_list = 1
